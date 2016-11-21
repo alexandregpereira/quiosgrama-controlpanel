@@ -1,0 +1,114 @@
+.quios-tables {
+  padding-left: 0;
+  padding-bottom: 1px;
+  margin-bottom: 20px;
+  list-style: none;
+  overflow: hidden;
+}
+
+.quios-tables li {
+  float: left;
+  width: 25%;
+  min-height: 70px;
+  padding: 3px;
+  margin: 0 -1px -1px 0;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  border: 5px solid white;
+  color: white;
+}
+
+.quios-tables li.quios-table-open, .quios-tables li.quios-table-alert {
+  cursor: pointer;
+}
+
+.quios-tables li.quios-table-open:hover {
+  background-color: #28c17a;
+}
+
+.quios-tables li.quios-table-closed:hover {
+  /*background-color: #e2685a;*/
+}
+
+.quios-tables li.quios-table-alert:hover {
+  background-color: #FFC365;
+}
+
+@media (min-width: 768px) {
+  .quios-tables li {
+    width: 7.21%;
+  }
+}
+
+.quios-table-open {
+  background-color: #00a65a;
+}
+
+.quios-table-closed {
+  background-color: #dd4b39;
+}
+
+.quios-table-alert {
+  background-color: #f39c12;
+}
+
+.quios-table-text {
+  font-size: 25px;
+}
+
+.quios-modal-button {
+  width: 31.58%;
+}
+
+.quios-clear {
+  clear: both;
+}
+
+.quios-bill-item {
+  border-bottom: 1px solid #f4f4f4;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.quios-bill-item-invalid {
+  color: red;
+}
+
+.quios-close-btn {
+  color: red;
+  margin-top: -5px;
+  margin-bottom: 5px;
+}
+
+.quios-valid-btn {
+  font-size: 15px;
+  color: #2ca339;
+  margin-top: -5px;
+  margin-bottom: 5px;
+  opacity: .5;
+}
+
+.quios-close-btn:hover, .quios-close-btn:enabled, .quios-close-btn:active {
+  color: red;
+}
+
+.quios-valid-btn:hover, .quios-valid-btn:enabled, .quios-valid-btn:active {
+  color: #2ca339;
+}
+
+.quios-valid-btn:hover {
+  opacity: .9;
+}
+
+.quios-left {
+  float: left;
+}
+
+.quios-right {
+  float: right;
+}
+
+.total-value {
+  font-weight: bold;
+}
