@@ -1,0 +1,146 @@
+php_value date.timezone 'America/Sao_Paulo'
+
+ErrorDocument 401 /erro-401
+ErrorDocument 402 /erro-402
+ErrorDocument 403 /erro-403
+ErrorDocument 404 /erro-404
+ErrorDocument 405 /erro-405
+ErrorDocument 500 /erro-500
+ErrorDocument 501 /erro-500
+ErrorDocument 502 /erro-500
+ErrorDocument 503 /erro-500
+ErrorDocument 504 /erro-500
+ErrorDocument 505 /erro-500
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	# Controllers
+	RewriteRule ^logout/?$ /App/Controller/Logout.Controller.php [NC]
+	RewriteRule ^fazer-login/?$ /App/Controller/Login.Controller.php [NC]
+	RewriteRule ^gerar-nova-senha/?$ /App/Controller/GenerateNewPassword.Controller.php [NC]
+	RewriteRule ^busca-de-cep/([0-9-]+)?$ /App/Controller/PesquisarCep.Controller.php?cep=$1 [NC]
+
+	RewriteRule ^alterar-senha/?$ /App/Controller/AlterMyPassword.Controller.php [NC]
+	RewriteRule ^esqueci-minha-senha/?$ /App/Controller/ForgotMyPassword.Controller.php [NC]
+
+	RewriteRule ^usuario/?$ /App/Controller/User.Controller.php [NC]
+	RewriteRule ^delecao-de-usuario/([0-9-]+)?$ /App/Controller/User.Controller.php?action=del&id=$1 [NC]
+
+	RewriteRule ^modulo/?$ /App/Controller/Module.Controller.php [NC]
+	RewriteRule ^delecao-de-modulo/([0-9-]+)?$ /App/Controller/Module.Controller.php?action=del&id=$1 [NC]
+
+	RewriteRule ^tela/?$ /App/Controller/Screen.Controller.php [NC]
+	RewriteRule ^delecao-de-tela/([0-9-]+)?$ /App/Controller/Screen.Controller.php?action=del&id=$1 [NC]
+
+	RewriteRule ^permissao/?$ /App/Controller/UserPermission.Controller.php [NC]
+	RewriteRule ^delecao-de-permissao/([0-9-]+)?$ /App/Controller/UserPermission.Controller.php?action=del&id=$1 [NC]
+
+	RewriteRule ^dispositivo/?$ /App/Controller/Device.Controller.php [NC]
+	RewriteRule ^delecao-de-dispositivo/([0-9-]+)?$ /App/Controller/Device.Controller.php?action=del&id=$1 [NC]
+
+	RewriteRule ^funcionario/?$ /App/Controller/Functionary.Controller.php [NC]
+	RewriteRule ^delecao-de-funcionario/([0-9-]+)?$ /App/Controller/Functionary.Controller.php?action=del&id=$1 [NC]
+
+	RewriteRule ^tipo-de-produto/?$ /App/Controller/ProductType.Controller.php [NC]
+	RewriteRule ^delecao-de-tipo-de-produto/([0-9-]+)?$ /App/Controller/ProductType.Controller.php?action=del&id=$1 [NC]
+
+	RewriteRule ^produto/?$ /App/Controller/Product.Controller.php [NC]
+	RewriteRule ^delecao-de-produto/([0-9-]+)?$ /App/Controller/Product.Controller.php?action=del&id=$1 [NC]
+
+	RewriteRule ^complemento/?$ /App/Controller/Complement.Controller.php [NC]
+	RewriteRule ^delecao-de-complemento/([0-9-]+)?$ /App/Controller/Complement.Controller.php?action=del&id=$1 [NC]
+
+	RewriteRule ^poi/?$ /App/Controller/Poi.Controller.php [NC]
+	RewriteRule ^delecao-de-poi/([0-9-]+)?$ /App/Controller/Poi.Controller.php?action=del&id=$1 [NC]
+
+	RewriteRule ^cliente/?$ /App/Controller/Client.Controller.php [NC]
+	RewriteRule ^delecao-de-cliente/([0-9-]+)?$ /App/Controller/Client.Controller.php?action=del&id=$1 [NC]
+
+	RewriteRule ^mesa/?$ /App/Controller/TableName.Controller.php [NC]
+	RewriteRule ^delecao-de-mesa/([0-9-]+)?$ /App/Controller/TableName.Controller.php?action=del&id=$1 [NC]
+
+	RewriteRule ^zerar-senha/([0-9-]+)?$ /App/Controller/ResetPassword.Controller.php?id=$1 [NC]
+
+	# Views
+  RewriteRule ^alterar-minha-senha/?$ /View/AlterMyPassword/index.php [NC]
+
+	RewriteRule ^listagem-de-usuarios/?$ /View/User/index.php [NC]
+	RewriteRule ^cadastro-de-usuario/?$ /View/User/register.php [NC]
+  RewriteRule ^edicao-de-usuario/([0-9]+)?$ /View/User/register.php?id=$1 [NC]
+
+  RewriteRule ^listagem-de-modulos/?$ /View/Module/index.php [NC]
+	RewriteRule ^cadastro-de-modulo/?$ /View/Module/register.php [NC]
+  RewriteRule ^edicao-de-modulo/([0-9]+)?$ /View/Module/register.php?id=$1 [NC]
+
+  RewriteRule ^listagem-de-telas/?$ /View/Screen/index.php [NC]
+	RewriteRule ^cadastro-de-tela/?$ /View/Screen/register.php [NC]
+  RewriteRule ^edicao-de-tela/([0-9]+)?$ /View/Screen/register.php?id=$1 [NC]
+
+  RewriteRule ^listagem-de-permissoes/?$ /View/UserPermission/index.php [NC]
+	RewriteRule ^cadastro-de-permissao/?$ /View/UserPermission/register.php [NC]
+  RewriteRule ^edicao-de-permissao/([0-9]+)?$ /View/UserPermission/register.php?id=$1 [NC]
+
+  RewriteRule ^listagem-de-dispositivos/?$ /View/Device/index.php [NC]
+	RewriteRule ^cadastro-de-dispositivo/?$ /View/Device/register.php [NC]
+  RewriteRule ^edicao-de-dispositivo/([0-9]+)?$ /View/Device/register.php?id=$1 [NC]
+
+  RewriteRule ^listagem-de-funcionarios/?$ /View/Functionary/index.php [NC]
+	RewriteRule ^cadastro-de-funcionario/?$ /View/Functionary/register.php [NC]
+  RewriteRule ^edicao-de-funcionario/([0-9]+)?$ /View/Functionary/register.php?id=$1 [NC]
+
+  RewriteRule ^listagem-de-tipos-de-produto/?$ /View/ProductType/index.php [NC]
+	RewriteRule ^cadastro-de-tipo-de-produto/?$ /View/ProductType/register.php [NC]
+  RewriteRule ^edicao-de-tipo-de-produto/([0-9]+)?$ /View/ProductType/register.php?id=$1 [NC]
+
+  RewriteRule ^listagem-de-produtos/?$ /View/Product/index.php [NC]
+	RewriteRule ^cadastro-de-produto/?$ /View/Product/register.php [NC]
+  RewriteRule ^edicao-de-produto/([0-9]+)?$ /View/Product/register.php?id=$1 [NC]
+
+  RewriteRule ^listagem-de-complementos/?$ /View/Complement/index.php [NC]
+	RewriteRule ^cadastro-de-complemento/?$ /View/Complement/register.php [NC]
+  RewriteRule ^edicao-de-complemento/([0-9]+)?$ /View/Complement/register.php?id=$1 [NC]
+
+  RewriteRule ^listagem-de-pois/?$ /View/Poi/index.php [NC]
+	RewriteRule ^cadastro-de-poi/?$ /View/Poi/register.php [NC]
+  RewriteRule ^edicao-de-poi/([0-9]+)?$ /View/Poi/register.php?id=$1 [NC]
+
+  RewriteRule ^listagem-de-clientes/?$ /View/Client/index.php [NC]
+	RewriteRule ^cadastro-de-cliente/?$ /View/Client/register.php [NC]
+  RewriteRule ^edicao-de-cliente/([0-9]+)?$ /View/Client/register.php?id=$1 [NC]
+
+  RewriteRule ^listagem-de-mesas/?$ /View/TableName/index.php [NC]
+	RewriteRule ^cadastro-de-mesa/?$ /View/TableName/register.php [NC]
+  RewriteRule ^edicao-de-mesa/([0-9]+)?$ /View/TableName/register.php?id=$1 [NC]
+
+	RewriteRule ^dashboard/?$ /View/Dashboard/index.php [NC]
+
+	RewriteRule ^login/?$ /View/Login/index.php [NC]
+	RewriteRule ^login/([a-zA-Z-]+)?$ /View/Login/index.php?msg=$1 [NC]
+
+	#
+
+	RewriteRule ^Quioservice/sync/sendTable?$ /App/WS/SendTable.php [NC]
+	RewriteRule ^Quioservice/sync/sendProductRequest?$ /App/WS/SendProductRequest.php [NC]
+	RewriteRule ^Quioservice/sync/getObjectContainer?$ /App/WS/GetObjectContainer.php [NC]
+	RewriteRule ^Quioservice/sync/sendPoi?$ /App/WS/SendPoi.php [NC]
+	RewriteRule ^Quioservice/sync/sendRegistration?$ /App/WS/SendRegistrationId.php [NC]
+	RewriteRule ^Quioservice/sync/sendBill?$ /App/WS/SendBill.php [NC]
+  RewriteRule ^Quioservice/sync/sendAmount?$ /App/WS/SendAmount.php [NC]
+	RewriteRule ^Quioservice/sync/getReport?$ /App/WS/GetReport.php [NC]
+	RewriteRule ^Quioservice/sync/validateLicence?$ /App/WS/ValidateLicence.php [NC]
+	RewriteRule ^Quioservice/sync/getProductRequestPrint?$ /App/WS/GetProductRequestPrint.php [NC]
+
+	# Erros
+
+	RewriteRule ^erro-401/?$ /View/Errors/401.php [NC]
+	RewriteRule ^erro-402/?$ /View/Errors/402.php [NC]
+	RewriteRule ^erro-403/?$ /View/Errors/403.php [NC]
+	RewriteRule ^erro-404/?$ /View/Errors/404.php [NC]
+	RewriteRule ^erro-405/?$ /View/Errors/405.php [NC]
+	RewriteRule ^erro-500/?$ /View/Errors/500.php [NC]
+
+	# Outros
+
+	RewriteRule ^swf-player/?$ /Resources/swf [NC]
+</IfModule>

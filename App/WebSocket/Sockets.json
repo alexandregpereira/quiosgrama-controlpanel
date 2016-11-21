@@ -1,0 +1,10 @@
+{
+  "Sockets": [
+    {
+      "Name": "App\\WebSocket\\Sockets\\Dashboard"
+    },
+    {
+      "Name": "App\\WebSocket\\Sockets\\RequestsPane"
+    }
+  ]
+}
